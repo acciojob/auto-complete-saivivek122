@@ -4,11 +4,11 @@ import "./../styles/App.css";
 const App = () => {
   const fruits = ["apple", "banana", "cherry", "date", "elderberry", "fig"];
   const [input, setInput] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState(fruits);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if (input.trim() === "") setSuggestions([]);
+      if (input.trim() === "") setSuggestions(fruits);
       else {
         const filtered = fruits.filter(fruit =>
           fruit.toLowerCase().startsWith(input.toLowerCase())
